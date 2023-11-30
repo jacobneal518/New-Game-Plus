@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NewGamePlus"
         tools:targetApi="34">
         <activity
+            android:name=".ProfilePage"
+            android:exported="false" />
+        <activity
             android:name=".HomePage"
             android:exported="false" />
         <activity
@@ -25,4 +28,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
