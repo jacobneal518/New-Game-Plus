@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button homeButton;
-    // UR MOM
+    //
     View.OnClickListener homePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
