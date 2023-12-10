@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HomePage extends AppCompatActivity {
 
@@ -54,7 +55,7 @@ public class HomePage extends AppCompatActivity {
         listView = findViewById(R.id.gameListView);
         gameList = new ArrayList<>();
 
-        gameList.add("https://store.steampowered.com/app/1593500/God_of_War/");
+        gameList.add("God of War");
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameList);
         listView.setAdapter(adapter);

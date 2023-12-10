@@ -7,21 +7,28 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import java.util.HashMap;
+
 public class GameActivity extends AppCompatActivity {
 
     public WebView webView;
+    HashMap<String, String> gameURLs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         webView = findViewById(R.id.webView);
 
-        String receivedData = "google.com";
+        gameURLs = new HashMap<String, String>();
+        gameURLs.put("God of War", "https://store.steampowered.com/app/1593500/God_of_War/");
+
+        String receivedGame = "google.com";
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            receivedData = bundle.getString("key");
+            receivedGame = bundle.getString("key");
         }
-        updateWebsite(receivedData);
+        String url = gameURLs.get(receivedGame);
+        updateWebsite(url);
     }
 
     /**
