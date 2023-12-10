@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class HomePage extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        homeButton = findViewById(R.id.homeButton);
+        homeButton = findViewById(R.id.homeButtonLogin);
         homeButton.setOnClickListener(homePageListener);
 
         profileButton = findViewById(R.id.profileButton);

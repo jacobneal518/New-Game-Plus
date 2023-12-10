@@ -35,7 +35,7 @@ public class ProfilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
-        homeButton = findViewById(R.id.homeButton);
+        homeButton = findViewById(R.id.homeButtonLogin);
         homeButton.setOnClickListener(homePageListener);
 
         profileButton = findViewById(R.id.profileButton);

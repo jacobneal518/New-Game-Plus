@@ -4,18 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.firebase.Firebase;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-
 public class MainActivity extends AppCompatActivity {
 
     Button homeButton,signIn,signOut;
-    private FirebaseAuth mAuth;
+
     Boolean signedIn;
 
     //
@@ -31,16 +28,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+    View.OnClickListener signInListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, LoginPage.class);
+            startActivity(intent);
+            //Log.i()
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         signedIn = false;
         super.onCreate(savedInstanceState);
-        FirebaseApp.initializeApp(this);
 
         setContentView(R.layout.activity_main);
-        homeButton = findViewById(R.id.homeButton);
+        homeButton = findViewById(R.id.homeButtonLogin);
         homeButton.setOnClickListener(homePageListener);
-        mAuth = FirebaseAuth.getInstance();
+        signIn = findViewById(R.id.signInButtonMain);
+        signIn.setOnClickListener(signInListener);
         }
 }
