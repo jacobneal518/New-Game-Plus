@@ -53,6 +53,9 @@ public class HomePage extends AppCompatActivity {
 
         listView = findViewById(R.id.gameListView);
         gameList = new ArrayList<>();
+
+        gameList.add("https://store.steampowered.com/app/1593500/God_of_War/");
+
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameList);
         listView.setAdapter(adapter);
         Log.i("ListView", "Finished initialization");
@@ -65,7 +68,10 @@ public class HomePage extends AppCompatActivity {
 
                 //update the TextView with the selected item's value
                 //String name = selectedItemValue.substring(0, selectedItemValue.indexOf("-") - 1);
-                Intent intent = new Intent(HomePage.this, HomePage.class);
+                Intent intent = new Intent(HomePage.this, GameActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("key", selectedItemValue);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
