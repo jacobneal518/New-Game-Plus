@@ -25,7 +25,7 @@ public class ProfilePage extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             //opens DB activity
-            Intent intent = new Intent(ProfilePage.this, ProfilePage.class);
+            Intent intent = new Intent(ProfilePage.this, AddProfileDetail.class);
             startActivity(intent);
         }
     };

@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
-    Button homeButton,signIn,signOut, tempButton;
+    Button homeButton,signIn,signOut, tempButton,profileButton;
 
     Boolean signedIn;
     private FirebaseAuth mAuth;
@@ -30,6 +30,20 @@ public class MainActivity extends AppCompatActivity {
             if(currUser!=null){
             Intent intent = new Intent(MainActivity.this, HomePage.class);
             startActivity(intent);
+            }else{
+                Toast.makeText(getApplicationContext(),"Not Signed In",Toast.LENGTH_LONG).show();
+            }
+
+        }
+    };
+    View.OnClickListener profilePageListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //opens DB activity
+            FirebaseUser currUser= mAuth.getCurrentUser();
+            if(currUser!=null){
+                Intent intent = new Intent(MainActivity.this, ProfilePage.class);
+                startActivity(intent);
             }else{
                 Toast.makeText(getApplicationContext(),"Not Signed In",Toast.LENGTH_LONG).show();
             }
@@ -71,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         signIn.setOnClickListener(signInListener);
         tempButton=findViewById(R.id.tempButton);
         tempButton.setOnClickListener(tempListener);
+        profileButton=findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(profilePageListener);
         mAuth = FirebaseAuth.getInstance();
         mdatabase = FirebaseDatabase.getInstance().getReference("users");
         }
