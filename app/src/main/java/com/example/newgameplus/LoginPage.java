@@ -21,7 +21,8 @@ import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    Button signUp,signIn,homeButton;
+
+    Button signUp,signIn,homeButton,signOutButton;
     EditText usernameET,passwordET;
     DatabaseReference mdatabase;
     @Override
@@ -36,6 +37,8 @@ public class LoginPage extends AppCompatActivity {
         homeButton.setOnClickListener(homeButtonListener);
         usernameET = findViewById(R.id.usernameET);
         passwordET = findViewById(R.id.passwordET);
+        signOutButton =findViewById(R.id.signOut);
+        signOutButton.setOnClickListener(signOutButtonListener);
         mAuth = FirebaseAuth.getInstance();
         mdatabase = FirebaseDatabase.getInstance().getReference("users");
     }
@@ -52,12 +55,24 @@ public class LoginPage extends AppCompatActivity {
         public void onClick(View v) {
             String email = usernameET.getText().toString();
             String password = passwordET.getText().toString();
-            if(isValidEmail(usernameET.getText().toString())==true){
+            if(email!=null&&password!=null){
+                if(isValidEmail(usernameET.getText().toString())==true){
                     signIn(email,password);
-            }else{
-                Toast.makeText(getApplicationContext(),"Username must be an email",Toast.LENGTH_LONG).show();
-            }
+                }else{
+                    Toast.makeText(getApplicationContext(),"Username must be an email",Toast.LENGTH_LONG).show();
+                }
 
+        }
+        }
+    };
+    View.OnClickListener signOutButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if (currentUser != null) {
+                mAuth.signOut();
+                // Additional clean-up or actions after signing out
+            }
         }
     };
     View.OnClickListener signUpButtonListener =  new View.OnClickListener() {
@@ -90,6 +105,7 @@ public class LoginPage extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("SignIn", "signInWithEmail:success");
+                            Toast.makeText(getApplicationContext(), "Sign in Succesful",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -109,8 +125,7 @@ public class LoginPage extends AppCompatActivity {
                         if (task.isSuccessful()) {
 // Sign in success, save new user in Freebase
                             Log.d("Sign Up", "createUserWithEmail:success");
-                            Toast.makeText(getApplicationContext(), "Signup Succesful",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Signup Succesful",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                         } else {

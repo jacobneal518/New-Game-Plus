@@ -8,12 +8,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
-    Button homeButton,signIn,signOut;
+    Button homeButton,signIn,signOut, tempButton;
 
     Boolean signedIn;
+    private FirebaseAuth mAuth;
+    DatabaseReference mdatabase;
 
     //
     View.OnClickListener homePageListener = new View.OnClickListener() {
@@ -26,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(getApplicationContext(),"Not Signed In",Toast.LENGTH_LONG).show();
             }
+
         }
     };
     View.OnClickListener signInListener = new View.OnClickListener() {
@@ -36,7 +43,21 @@ public class MainActivity extends AppCompatActivity {
             //Log.i()
         }
     };
+    View.OnClickListener tempListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            FirebaseUser currentUser = mAuth.getCurrentUser();
 
+            if (currentUser != null) {
+                // User is signed in, you can get the user details like email, UID, etc.
+                String userEmail = currentUser.getEmail();
+                Toast.makeText(getApplicationContext(),"User Email is "+userEmail,Toast.LENGTH_LONG).show();
+                // ... other user details
+            } else {
+                Toast.makeText(getApplicationContext(),"Something went oopsie",Toast.LENGTH_LONG).show();
+            }
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         signedIn = false;
@@ -47,5 +68,28 @@ public class MainActivity extends AppCompatActivity {
         homeButton.setOnClickListener(homePageListener);
         signIn = findViewById(R.id.signInButtonMain);
         signIn.setOnClickListener(signInListener);
+        tempButton=findViewById(R.id.tempButton);
+        tempButton.setOnClickListener(tempListener);
+        mAuth = FirebaseAuth.getInstance();
+        mdatabase = FirebaseDatabase.getInstance().getReference("users");
         }
+   /* @Override
+    protected void onStop() {
+        super.onStop();
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
+                                                               wanted this to sign out user whenever app closed,maybe onDestroy?
+        if (currentUser != null) {
+            auth.signOut();
+            // Additional clean-up or actions after signing out
+        }
+    }*/
+    public void onResume(){
+        super.onResume();
+        FirebaseUser currUser= mAuth.getCurrentUser();
+        if(currUser!=null){
+            currUser.reload();
+        }
+    }
 }
