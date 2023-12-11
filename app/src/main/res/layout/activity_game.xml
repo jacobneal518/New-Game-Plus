@@ -39,4 +39,14 @@
             android:text="Profile" />
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="49dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView"
+        app:srcCompat="@drawable/app_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
