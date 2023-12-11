@@ -77,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         signedIn = false;
         super.onCreate(savedInstanceState);
-
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currUser= mAuth.getCurrentUser();
+        if(currUser!=null){
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            startActivity(intent);
+        }
         setContentView(R.layout.activity_main);
         homeButton = findViewById(R.id.homeButtonLogin);
         homeButton.setOnClickListener(homePageListener);
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         tempButton.setOnClickListener(tempListener);
         profileButton=findViewById(R.id.profileButton);
         profileButton.setOnClickListener(profilePageListener);
-        mAuth = FirebaseAuth.getInstance();
+
         mdatabase = FirebaseDatabase.getInstance().getReference("users");
         }
    /* @Override

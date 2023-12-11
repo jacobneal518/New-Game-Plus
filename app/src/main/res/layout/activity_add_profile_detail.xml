@@ -10,10 +10,18 @@
         android:id="@+id/detailBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginBottom="5dp"
-        android:text="Back"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/buttonGrey"
+        android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="313dp"
+        tools:layout_editor_absoluteY="678dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
