@@ -118,18 +118,26 @@ public class LoginPage extends AppCompatActivity {
                 });
     }
     public void signUp(String email,String password){
+        //also sets up database with email as key
+        String cleanEmail = email.replace(".", "_");//cleaned for firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users");
+        ref.child(cleanEmail).child("firstName").setValue("N/A");
+        ref.child(cleanEmail).child("lastName").setValue("N/A");
+        ref.child(cleanEmail).child("userName").setValue("N/A");
+        ref.child(cleanEmail).child("profilePic").setValue("");
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-// Sign in success, save new user in Freebase
+                            // Sign in success, save new user in Freebase
                             Log.d("Sign Up", "createUserWithEmail:success");
                             Toast.makeText(getApplicationContext(), "Signup Succesful",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                         } else {
-// If sign up fails, display a message to the user.
+                            // If sign up fails, display a message to the user.
                             Exception e = task.getException();
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
