@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             //opens DB activity
-            if(signedIn==true){
+            FirebaseUser currUser= mAuth.getCurrentUser();
+            if(currUser!=null){
             Intent intent = new Intent(MainActivity.this, HomePage.class);
             startActivity(intent);
             }else{
