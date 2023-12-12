@@ -65,7 +65,7 @@ public class ProfilePage extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     fNameTV.setText(dataSnapshot.child("firstName").getValue(String.class));
                     lNameTV.setText(dataSnapshot.child("lastName").getValue(String.class));
-                    usernameTV.setText(dataSnapshot.child("userName").getValue(String.class));
+                    usernameTV.setText("@" + dataSnapshot.child("userName").getValue(String.class));
                     String profilePicUrl = dataSnapshot.child("profilePic").getValue(String.class);
                     Glide.with(getApplicationContext())//Picasso would NOT WORK ARGH
                             .load(profilePicUrl)

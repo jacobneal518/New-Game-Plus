@@ -84,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         setContentView(R.layout.activity_main);
-        homeButton = findViewById(R.id.homeButtonLogin);
-        homeButton.setOnClickListener(homePageListener);
+        //homeButton = findViewById(R.id.homeButtonLogin);
+        //homeButton.setOnClickListener(homePageListener);
         signIn = findViewById(R.id.signInButtonMain);
         signIn.setOnClickListener(signInListener);
-        tempButton=findViewById(R.id.tempButton);
-        tempButton.setOnClickListener(tempListener);
-        profileButton=findViewById(R.id.profileButton);
-        profileButton.setOnClickListener(profilePageListener);
+        //tempButton=findViewById(R.id.tempButton);
+        //tempButton.setOnClickListener(tempListener);
+        //profileButton=findViewById(R.id.profileButton);
+        //profileButton.setOnClickListener(profilePageListener);
 
         mdatabase = FirebaseDatabase.getInstance().getReference("users");
         }

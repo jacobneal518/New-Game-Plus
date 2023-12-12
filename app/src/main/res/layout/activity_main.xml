@@ -6,51 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="411dp"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/homeButtonLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
-            android:text="Home" />
-
-        <Button
-            android:id="@+id/profileButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
-            android:text="Profile" />
-    </LinearLayout>
-
     <Button
         android:id="@+id/signInButtonMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="328dp"
-        android:backgroundTint="@color/buttonGrey"
+        android:layout_width="345dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="83dp"
+        android:backgroundTint="@color/buttonBlack"
         android:text="Sign In"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <Button
-        android:id="@+id/tempButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="108dp"
-        android:text="isUserSignedIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signInButtonMain" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="202dp"
+        android:layout_height="234dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="115dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/app_logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
