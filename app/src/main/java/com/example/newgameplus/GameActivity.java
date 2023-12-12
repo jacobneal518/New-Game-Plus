@@ -54,6 +54,9 @@ public class GameActivity extends AppCompatActivity {
         gameURLs.put("Minecraft Dungeons", "https://store.steampowered.com/app/1672970/Minecraft_Dungeons/");
         gameURLs.put("Red Dead Redemption 2", "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/");
         gameURLs.put("Elden Ring", "https://store.steampowered.com/app/1245620/ELDEN_RING/");
+        gameURLs.put("Fortnite", "https://www.fortnite.com/?lang=en-US");
+        gameURLs.put("Minecraft", "https://www.minecraft.net/en-us");
+        gameURLs.put("Dead By Daylight", "https://store.steampowered.com/app/381210/Dead_by_Daylight/");
 
         String receivedGame = "google.com";
         Bundle bundle = getIntent().getExtras();

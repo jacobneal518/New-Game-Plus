@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,10 @@ public class ProfilePage extends AppCompatActivity {
 
     Button homeButton;
     Button profileButton;
+
+    ImageButton game1;
+    ImageButton game2;
+    ImageButton game3;
     FirebaseAuth mAuth;
     TextView usernameTV,fNameTV,lNameTV;
     ImageView profileImage;
@@ -41,6 +46,39 @@ public class ProfilePage extends AppCompatActivity {
         public void onClick(View v) {
             //opens DB activity
             Intent intent = new Intent(ProfilePage.this, AddProfileDetail.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener game1Listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(ProfilePage.this, GameActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("key", "Fortnite");
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener game2Listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(ProfilePage.this, GameActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("key", "Minecraft");
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener game3Listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(ProfilePage.this, GameActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("key", "Dead By Daylight");
+            intent.putExtras(bundle);
             startActivity(intent);
         }
     };
@@ -84,5 +122,15 @@ public class ProfilePage extends AppCompatActivity {
 
         profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(profilePageListener);
+
+        game1 = findViewById(R.id.imageView8);
+        game1.setOnClickListener(game1Listener);
+        game2 = findViewById(R.id.imageView9);
+        game2.setOnClickListener(game2Listener);
+        game3 = findViewById(R.id.imageView10);
+        game3.setOnClickListener(game3Listener);
+
+
+
     }
 }
