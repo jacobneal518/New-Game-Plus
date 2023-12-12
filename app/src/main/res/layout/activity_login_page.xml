@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/buttonBlack"
-            android:text="Back" />
+            android:text="Back/Home" />
 
     </LinearLayout>
 
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="42dp"
-        android:text="Username"
+        android:text="Email"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -92,10 +92,10 @@
 
     <Button
         android:id="@+id/signOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="408dp"
+        android:layout_marginTop="428dp"
         android:backgroundTint="@color/buttonGrey"
         android:text="Sign Out"
         app:layout_constraintStart_toStartOf="parent"
