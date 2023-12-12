@@ -58,21 +58,6 @@ public class MainActivity extends AppCompatActivity {
             //Log.i()
         }
     };
-    View.OnClickListener tempListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-
-            if (currentUser != null) {
-                // User is signed in, you can get the user details like email, UID, etc.
-                String userEmail = currentUser.getEmail();
-                Toast.makeText(getApplicationContext(),"User Email is "+userEmail,Toast.LENGTH_LONG).show();
-                // ... other user details
-            } else {
-                Toast.makeText(getApplicationContext(),"Something went oopsie",Toast.LENGTH_LONG).show();
-            }
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         signedIn = false;
@@ -84,34 +69,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         setContentView(R.layout.activity_main);
-        //homeButton = findViewById(R.id.homeButtonLogin);
-        //homeButton.setOnClickListener(homePageListener);
         signIn = findViewById(R.id.signInButtonMain);
         signIn.setOnClickListener(signInListener);
-        //tempButton=findViewById(R.id.tempButton);
-        //tempButton.setOnClickListener(tempListener);
-        //profileButton=findViewById(R.id.profileButton);
-        //profileButton.setOnClickListener(profilePageListener);
-
         mdatabase = FirebaseDatabase.getInstance().getReference("users");
         }
-   /* @Override
-    protected void onStop() {
-        super.onStop();
-
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = auth.getCurrentUser();
-                                                               wanted this to sign out user whenever app closed,maybe onDestroy?
-        if (currentUser != null) {
-            auth.signOut();
-            // Additional clean-up or actions after signing out
-        }
-    }*/
-    public void onResume(){
-        super.onResume();
-        FirebaseUser currUser= mAuth.getCurrentUser();
-        if(currUser!=null){
-            currUser.reload();
-        }
-    }
 }

@@ -66,6 +66,7 @@ public class LoginPage extends AppCompatActivity {
         }
     };
     View.OnClickListener signOutButtonListener = new View.OnClickListener() {
+        //Also defunct, just left in for testing instead.
         @Override
         public void onClick(View v) {
             FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -147,7 +148,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
 
-    public void onStart(){
+    public void onStart(){ //checks for user. defunct, but kept in just in case
         super.onStart();
         FirebaseUser currUser= mAuth.getCurrentUser();
         if(currUser!=null){
