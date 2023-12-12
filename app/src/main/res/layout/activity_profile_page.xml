@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonBlack"
             android:text="Home" />
 
         <Button
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonOrange"
             android:text="Edit Profile" />
     </LinearLayout>
 
@@ -77,26 +77,21 @@
         android:id="@+id/firstNameTVProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="179dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/profilePicIV"
         app:layout_constraintTop_toBottomOf="@+id/profilePicIV" />
 
     <TextView
         android:id="@+id/lastNameTVProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="179dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/firstNameTVProfile"
         app:layout_constraintTop_toBottomOf="@+id/profilePicIV" />
 
     <TextView
@@ -104,7 +99,7 @@
         android:layout_width="407dp"
         android:layout_height="82dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"

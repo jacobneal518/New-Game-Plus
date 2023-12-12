@@ -10,19 +10,22 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="15dp"
         android:text="Last Name"
-        app:layout_constraintEnd_toStartOf="@+id/lastNameET"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameET" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="147dp"
         android:text="First Name"
-        app:layout_constraintEnd_toStartOf="@+id/firstNameET"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -32,6 +35,7 @@
         android:layout_marginEnd="138dp"
         android:layout_marginBottom="1dp"
         android:text="Submit Photo"
+        android:backgroundTint="@color/buttonOrange"
         app:layout_constraintBottom_toTopOf="@+id/submitButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -63,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/buttonBlack"
         android:text="Submit Changes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/signOutButton" />
@@ -71,44 +76,45 @@
         android:id="@+id/firstNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/lastNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameET" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/customerUsernameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameET" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="28dp"
         android:text="Username"
-        app:layout_constraintEnd_toStartOf="@+id/firstNameET"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameET" />
 
     <ImageView
         android:id="@+id/tempProfile"

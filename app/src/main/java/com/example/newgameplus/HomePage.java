@@ -75,9 +75,6 @@ public class HomePage extends AppCompatActivity {
         gameList.add(new GameDataDisplay("Red Dead Redemption 2", "M", "2018"));
         imageList.add(R.drawable.rdr2);
 
-        //gameList.add("Red Dead Redemption 2");
-        //gameList.add("Elden Ring");
-
         //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameList);
         ArrayAdapter<GameDataDisplay> adapter = new ArrayAdapter<GameDataDisplay>(this, android.R.layout.simple_list_item_1, gameList){
             @NonNull
