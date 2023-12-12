@@ -86,6 +86,9 @@ public class AddProfileDetail extends AppCompatActivity {
         }
     };
 
+    /**
+     * Chooses pic from gallery
+     */
     private void choosePicture() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -93,6 +96,17 @@ public class AddProfileDetail extends AppCompatActivity {
         startActivityForResult(intent, 1);
     }
 
+    /**
+     *   Once its pulled turns it into a uri.
+     * @param requestCode The integer request code originally supplied to
+     *                    startActivityForResult(), allowing you to identify who this
+     *                    result came from.
+     * @param resultCode The integer result code returned by the child activity
+     *                   through its setResult().
+     * @param data An Intent, which can return result data to the caller
+     *               (various data can be attached to Intent "extras").
+     *
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -104,6 +118,10 @@ public class AddProfileDetail extends AppCompatActivity {
         }
     }
 
+    /**
+     * Uploads pic to the firebase as a url, so that it can  be loaded later
+     * @param uploadUri
+     */
     private void uploadPic(Uri uploadUri) {
         String email = mAuth.getCurrentUser().getEmail();
         String cleanEmail = email.replace(".", "_");

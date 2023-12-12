@@ -32,7 +32,7 @@ public class ProfilePage extends AppCompatActivity {
     ImageView profileImage;
     private ImageView profileImg;
 
-    View.OnClickListener homePageListener = new View.OnClickListener() {
+    View.OnClickListener homePageListener = new View.OnClickListener() {//Changes to home page
         @Override
         public void onClick(View v) {
             //opens DB activity
@@ -41,7 +41,7 @@ public class ProfilePage extends AppCompatActivity {
         }
     };
 
-    View.OnClickListener profilePageListener = new View.OnClickListener() {
+    View.OnClickListener profilePageListener = new View.OnClickListener() {//Changes to profule page
         @Override
         public void onClick(View v) {
             //opens DB activity
@@ -50,7 +50,7 @@ public class ProfilePage extends AppCompatActivity {
         }
     };
 
-    View.OnClickListener game1Listener = new View.OnClickListener() {
+    View.OnClickListener game1Listener = new View.OnClickListener() {//hardcoded for example
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(ProfilePage.this, GameActivity.class);
@@ -61,7 +61,7 @@ public class ProfilePage extends AppCompatActivity {
         }
     };
 
-    View.OnClickListener game2Listener = new View.OnClickListener() {
+    View.OnClickListener game2Listener = new View.OnClickListener() {//hardcoded for example
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(ProfilePage.this, GameActivity.class);
@@ -72,7 +72,7 @@ public class ProfilePage extends AppCompatActivity {
         }
     };
 
-    View.OnClickListener game3Listener = new View.OnClickListener() {
+    View.OnClickListener game3Listener = new View.OnClickListener() {//hardcoded for example
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(ProfilePage.this, GameActivity.class);
@@ -100,7 +100,7 @@ public class ProfilePage extends AppCompatActivity {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) {//once the data snapshott comes in, this assigns things to where they need to show up
                     fNameTV.setText(dataSnapshot.child("firstName").getValue(String.class));
                     lNameTV.setText(dataSnapshot.child("lastName").getValue(String.class));
                     usernameTV.setText("@" + dataSnapshot.child("userName").getValue(String.class));

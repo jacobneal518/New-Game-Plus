@@ -49,6 +49,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/buttonOrange"
             android:text="Edit Profile" />
+
     </LinearLayout>
 
     <ImageView
