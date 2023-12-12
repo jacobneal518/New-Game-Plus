@@ -1,4 +1,7 @@
 package com.example.newgameplus;
+/*
+This Class displays game information to User
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +22,7 @@ public class GameActivity extends AppCompatActivity {
     Button homeButton;
     Button profileButton;
 
+    //listener to take you to home page
     View.OnClickListener homePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -28,6 +32,7 @@ public class GameActivity extends AppCompatActivity {
         }
     };
 
+    //listener to take you to profile page
     View.OnClickListener profilePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -48,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.webView);
 
+        //add games to valid list
         gameURLs = new HashMap<String, String>();
         gameURLs.put("God of War", "https://store.steampowered.com/app/1593500/God_of_War/");
         gameURLs.put("Lethal Company", "https://store.steampowered.com/app/1966720/Lethal_Company/");

@@ -1,5 +1,7 @@
 package com.example.newgameplus;
-
+/*
+Home page code
+ */
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,7 @@ public class HomePage extends AppCompatActivity {
 
     ArrayList<Integer> imageList;
 
+    //go to home button
     View.OnClickListener homePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -39,6 +42,7 @@ public class HomePage extends AppCompatActivity {
         }
     };
 
+    //go to profile button
     View.OnClickListener profilePageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -62,7 +66,7 @@ public class HomePage extends AppCompatActivity {
         listView = findViewById(R.id.gameListView);
         gameList = new ArrayList<>();
         imageList = new ArrayList<>();
-
+        //add valid games
         gameList.add(new GameDataDisplay("God of War", "M", "2018"));
         imageList.add(R.drawable.god_of_war);
 
@@ -76,6 +80,7 @@ public class HomePage extends AppCompatActivity {
         imageList.add(R.drawable.rdr2);
 
         //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gameList);
+        //set custom adapter to allow for complex display
         ArrayAdapter<GameDataDisplay> adapter = new ArrayAdapter<GameDataDisplay>(this, android.R.layout.simple_list_item_1, gameList){
             @NonNull
             @Override
