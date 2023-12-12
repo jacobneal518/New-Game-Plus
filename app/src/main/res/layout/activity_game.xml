@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonBlack"
             android:text="Home" />
 
         <Button
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonOrange"
             android:text="Profile" />
     </LinearLayout>
 

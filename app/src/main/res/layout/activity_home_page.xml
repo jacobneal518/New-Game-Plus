@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonBlack"
             android:text="Home" />
 
         <Button
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/buttonGrey"
+            android:backgroundTint="@color/buttonOrange"
             android:text="Profile" />
     </LinearLayout>
 
@@ -35,19 +35,21 @@
         android:id="@+id/gameListView"
         android:layout_width="410dp"
         android:layout_height="477dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommendedText" />
 
     <TextView
         android:id="@+id/recommendedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="10dp"
         android:text="Your Recommended Games:"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/gameListView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicIV" />
 
     <ImageView
         android:id="@+id/profilePicIV"
